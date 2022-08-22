@@ -34,7 +34,8 @@ class myAgent extends https.Agent {
     let response = ''
     const dataListener = (data) => {
       response += data.toString()
-      if (!response.endsWith('\r\n\r\n')) {
+      //if (!response.endsWith('\r\n\r\n')) {
+      if (response.indexOf("\r\n\r\n") < 0) {
         // response not completed yet
         return
       }
